@@ -3,17 +3,23 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Tarefa } from 'src/entidades/tarefa.entity';
 import { Repository } from 'typeorm';
-import { CreateTarefasParam, UpdateTarefasParam } from './parametros/tarefas.param';
+import {
+  CreateTarefasParam,
+  UpdateTarefasParam,
+} from './parametros/tarefas.param';
 
 @Injectable()
 export class TarefasService {
   constructor(
     @InjectRepository(Tarefa) private repositorioTarefa: Repository<Tarefa>,
   ) {}
-  
-  acheTodos(prioridade?: 'ALTA' | 'MÉDIA' | 'BAIXA') {
-    if(prioridade) {
-        return this.repositorioTarefa.findBy({ prioridade });
+
+  acheTodos(
+    prioridade?: 'ALTA' | 'MÉDIA' | 'BAIXA',
+    status?: 'CONCLUÍDO' | 'PENDENTE',
+  ) {
+    if (prioridade || status) {
+      return this.repositorioTarefa.findBy({ prioridade, status });
     }
 
     return this.repositorioTarefa.find();
@@ -33,13 +39,16 @@ export class TarefasService {
     return this.repositorioTarefa.save(novaTarefa);
   }
 
-  update(id: number, updateTarefa: UpdateTarefasParam){
-    this.repositorioTarefa.update({ id }, {...updateTarefa, atualizadoEm: new Date()});
+  update(id: number, updateTarefa: UpdateTarefasParam) {
+    this.repositorioTarefa.update(
+      { id },
+      { ...updateTarefa, atualizadoEm: new Date() },
+    );
 
     return this.achePorId(id);
   }
 
-  delete(id: number){
+  delete(id: number) {
     const antigaTarefa = this.achePorId(id);
 
     this.repositorioTarefa.delete({ id });

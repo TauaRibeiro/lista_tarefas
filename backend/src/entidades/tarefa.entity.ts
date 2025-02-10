@@ -16,7 +16,7 @@ export class Tarefa {
   responsavel: string;
 
   @Column()
-  status: 'CONCLUÍDO' | 'FINALIZADO';
+  status: 'CONCLUÍDO' | 'PENDENTE';
 
   @Column()
   prioridade: 'ALTA' | 'MÉDIA' | 'BAIXA';

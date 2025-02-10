@@ -18,8 +18,10 @@ import { UpdateTarefaDto } from './DTO/update.tarefa.dto';
 export class TarefasController {
   constructor(private tarefasService: TarefasService) {}
   @Get()
-  async acheTodos(@Query('prioridade') prioridade?: 'ALTA' | 'MÉDIA' | 'BAIXA') {
-    return await this.tarefasService.acheTodos(prioridade);
+  async acheTodos(
+    @Query('prioridade') prioridade?: 'ALTA' | 'MÉDIA' | 'BAIXA',
+    @Query('status') status?: 'CONCLUÍDO' | 'PENDENTE') {
+    return await this.tarefasService.acheTodos(prioridade, status);
   }
 
   @Get(':id')
