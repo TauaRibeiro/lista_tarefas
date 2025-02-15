@@ -1,0 +1,14 @@
+.container-tarefas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.tarefas {
+  background-color: lightblue;
+  border: 2px outset lightblue;
+  border-radius: 10px;
+  padding: 5px;
+}

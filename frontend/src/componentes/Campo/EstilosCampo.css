@@ -1,0 +1,22 @@
+.container-campo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.campo {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+}
+
+.campo input {
+    width: 75%;
+    border-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
