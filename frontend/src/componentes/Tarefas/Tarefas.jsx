@@ -1,4 +1,5 @@
 import Campo from "../Campo/Campo.jsx";
+import AreaTexto from "../AreaTexto/AreaTexto.jsx";
 import "./EstilosTarefas.css";
 
 function Tarefas() {
@@ -7,15 +8,16 @@ function Tarefas() {
         <div className="tarefas">
             <form action="post">
                 <Campo type="text" placeholder="Digite o título do tarefa" />
-            </form>
-            <form action="post">
+
                 <Campo type="text" placeholder="Digite o responsável da tarefa" />
-            </form>
-            <form action="post">
+
                 <Campo type="text" placeholder="Selecione a prioridade da tarefa" />
-            </form>
-            <form action="post">
+
                 <Campo type="area" placeholder="Digite o título do tarefa" />
+
+                <AreaTexto rows={"4"} cols={"50"} placeholder="Digite a descrição da tarefa" maxlength={"200"}></AreaTexto>
+
+                <Campo type="submit"></Campo>
             </form>
         </div>
     </div>

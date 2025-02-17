@@ -1,0 +1,26 @@
+#container_descricao {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+#area_texto {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+}
+
+#area_texto textarea {
+  box-sizing: content-box;
+  width: 77%;
+  border: 2px inset white;
+  resize: none;
+  border-radius: 10px;
+  padding: 2px;
+  outline-width: 2px;
+  outline-color: lightblue;
+}
