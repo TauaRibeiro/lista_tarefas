@@ -1,9 +1,9 @@
 .container-tarefas {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-    height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  height: auto;
 }
 
 .tarefas {
