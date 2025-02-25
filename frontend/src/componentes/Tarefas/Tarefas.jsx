@@ -4,6 +4,7 @@ import Selecionar from "../Campos/Selecionar.jsx";
 import "./EstilosTarefas.css";
 import axios from 'axios';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Tarefas({ criarTarefa}) {
   const [inputTitulo, setInputTitulo] = useState("");
@@ -29,6 +30,10 @@ function Tarefas({ criarTarefa}) {
       setInputResponsavel("");
       setInputPrioridade("0")
       setInputDescricao("");
+    }
+
+    function verDetalhes(tarefa) {
+      const query = new URL
     }
     
   }

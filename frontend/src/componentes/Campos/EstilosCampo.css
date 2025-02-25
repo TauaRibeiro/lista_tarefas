@@ -25,7 +25,6 @@
 
 .campo select {
   width: 75%;
-  color: gray;
   border-color: white;
   border-radius: 10px;
   padding: 5px;
@@ -35,3 +34,6 @@
   border-radius: 10px;
 }
 
+.campo select:has(option[value="0"]){
+  color: gray;
+}
